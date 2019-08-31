@@ -53,6 +53,13 @@ body{
 }
 
 
+#terms{
+	max-width: 290px;
+	margin: auto;
+	text-align: center;
+	font-size: 0.8em;
+}
+
 /****************************************/
 
 
@@ -65,8 +72,8 @@ body{
 /*seats*/
 .seat {
     
-    width: 40px; 
-    height: 40px;
+    width: 30px; 
+    height: 30px;
     margin: 5px;
     border: 2px solid grey;
     float: left;
@@ -94,8 +101,9 @@ body{
     border-color: #EE5F57;
 }*/
 /***************************************/
+
 .messagePanel{
-	width: 540px;
+	width: 700px;
 	margin: auto;
 	display: flex;
 	flex-wrap: wrap;
@@ -103,6 +111,12 @@ body{
 
 .space{
 	width: 30px;
+}
+.break{
+	width: 700px;
+}
+.scroll{
+	overflow-x: scroll;
 }
 
 
@@ -121,42 +135,48 @@ body{
 }
 
 
+.screen {
+    border: #474747;
+    border-width: 0px;
+    border-bottom-width: 5px;
+    border-style: solid;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
+}
+
 /*====================================*/
+
 
 @media screen and (max-width: 768px){
 	.seat{
-		width: 30px;
-		height: 30px;
-		margin: 3px;
+		width: 25px;
+		height: 25px;
+		margin: 2.5px;
 	}
 
 	.messagePanel{
-		width: 420px;
+		width: 510px;
 	}
 	.seat:after{
 		font-size: 0.6em;
 	}
-
+	.break{
+	width: 510px;
+	}	
+	/*.scroll{
+	overflow-x: scroll;
+	}*/
 
 }
 
 
-@media screen and (max-width: 450px){
-	.seat{
-		width: 20px;
-		height: 20px;
-		margin: 3px;
-	}
 
-	.messagePanel{
-		width: 300px;
-	}
+@media screen and (max-width: 450px){
 
 	.space{
 		width: 20px;
-	}
-	.seat:after{
-		display: none;
 	}
 }
 

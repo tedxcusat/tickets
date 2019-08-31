@@ -38,30 +38,42 @@ function createseating(seats) {
     var seatingValue = [];
     // for (var i = 0; i < 10; i++) {
     // <input type='radio' name='seat' value=''>
+    var i = 0;
     for (var j = 0; j < seats.length; j++) {
         dis = seats[j].available ? "" : "disabled"
         var seatingStyle = "<input type='radio' name='seat' id='" + seats[j].id + "' value='" + seats[j].id + "' class='seat available' " + dis + " required/>";
 
-        console.log(seatingStyle, dis)
+        // console.log(seatingStyle, dis)
         seatingValue.push(seatingStyle);
 
-        if((j+1)%5===0 && (j+1)%10 !== 0)
-        {
-        	var seatingStyle = "<div class='space'></div>";
+
+
+        var final = {
+            A: 12,
+            B: 12,
+            C: 14,
+            D: 14,
+            E: 16,
+            F: 16,
+            G: 16,
+        }
+        var val = final[seats[j].id[0]]
+
+        if ((i + 1) % (val / 2) === 0 && (i + 1) % val !== 0) {
+            console.log(val, j)
+            var seatingStyle = "<div class='space'></div>";
             seatingValue.push(seatingStyle);
         }
 
-        if ((j+1)%10 === 0) {
-            console.log("hi");
-            var seatingStyle = "<div></div>";
+        if ((i + 1) % val === 0) {
+            console.log(val, j);
+            var seatingStyle = "<div class='break'></div>";
             seatingValue.push(seatingStyle);
-
-
-
+            i = -1;
         }
+        i++;
     }
     // }
-
     $('#messagePanel').html(seatingValue);
 
 
@@ -73,6 +85,9 @@ function createseating(seats) {
 		$('.seat').mouseleave(function () {
     			$(this).attr('data-after',"");
 		});
+
+      
+      
     });
 
     // $(function () {

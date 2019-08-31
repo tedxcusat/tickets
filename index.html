@@ -42,9 +42,11 @@
     <div class="container">
         <!-- ---------------------------------------------------------- -->
         <div class="header h1 text-center">
-            <span style="color: #EC3832">Buy</span> Tickets
+            <!-- <span style="color: #EC3832">Buy</span> Tickets -->
+            Registrations
         </div>
         <!-- ---------------------------------------------------------- -->
+        <br> <br>
         <div class="tickets text-center">
             <form action="https://us-central1-tedx-a0b18.cloudfunctions.net/addMessage" method="POST">
                 <div class="form-group">
@@ -53,6 +55,11 @@
                         placeholder="Enter full name" required>
 
                 </div>
+                <!-- <div class="form-group">
+                        <label for="FullName">Seat no</label>
+                     <input type="text" class="form-control" id="Name" aria-describedby="Name"                  placeholder="Enter full name" required>
+                                     
+                     </div> -->
 
                 <div class="form-group">
                     <label for="Email1">Email address</label>
@@ -65,19 +72,9 @@
                     <input type="tel" pattern="[0-9]{10}" name="phone" class="form-control" id="validationDefault05"
                         placeholder="10 digit mobile no" required>
                 </div>
-
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input radio-s" type="radio" name="food" id="inlineRadio1" value="veg"
-                        required>
-                    <label class="form-check-label" for="inlineRadio1">VEG &nbsp;&nbsp;&nbsp;&nbsp;</label>
-                </div>
-                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input radio-s" type="radio" name="food" id="inlineRadio2" value="non-veg">
-                    <label class="form-check-label" for="inlineRadio2">&nbsp;&nbsp;&nbsp;&nbsp;NON-VEG</label>
-                </div>
-                <br><br>
+                <br>
                 <div class="form-group">
+                    <label>Ticket type:</label><br>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input radio-s" type="radio" name="type" id="inlineRadio3" value="cusat"
                             required>
@@ -87,10 +84,24 @@
                     <div class="form-check form-check-inline">
                         <input class="form-check-input radio-s" type="radio" name="type" id="inlineRadio4"
                             value="normal">
-                        <label class="form-check-label" for="inlineRadio4">NON-CUSAT</label>
+                        <label class="form-check-label" for="inlineRadio4">General</label>
                     </div>
-                    <br>
-                    <span id="terms">By selecting a CUSAT ticket, you agree to our <a href="https://tedxcusat.in/guidelines.pdf">terms and conditions</a> for the ticket.</span>
+                </div>
+                <br> <br>
+                <div class="form-group">
+                    <label>Food preference:</label><br>
+                    <div class=" form-check form-check-inline">
+
+                        <input class="form-check-input radio-s" type="radio" name="food" id="inlineRadio1" value="veg"
+                            required>
+                        <label class="form-check-label" for="inlineRadio1">VEG &nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    </div>
+                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input radio-s" type="radio" name="food" id="inlineRadio2"
+                            value="non-veg">
+                        <label class="form-check-label" for="inlineRadio2">&nbsp;&nbsp;&nbsp;&nbsp;NON-VEG</label>
+                    </div>
                 </div>
                 <br><br>
                 <!--  <div class="form-check">
@@ -100,18 +111,26 @@
                 <div class="form-group seatlayout">
                     <h3 class="h3"><span style="color: #EC3832">Select</span> Seat</h3>
                     <br>
-                    <div id="messagePanel" class="messagePanel"></div>
+                    <div class="screen justify-content-center">All eyes this way, please.</div>
+                    <div class="scroll">
+                        <div id="messagePanel" class="messagePanel justify-content-center"></div>
+                    </div>
                 </div>
 
                 <br><br>
+                <div id="terms">
+                    <span>By booking a TEDxCUSAT ticket, you agree to our <a
+                            href="https://tedxcusat.in/guidelines.pdf" target="blank">terms and conditions</a>.</span>
+                </div>
 
+                <br><br>
                 <button type="submit" class="btn btn-danger">Buy Ticket</button>
             </form>
 
         </div>
     </div>
     <!-- ========================================== -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="assets/js/script.js"></script>
 
 </body>
